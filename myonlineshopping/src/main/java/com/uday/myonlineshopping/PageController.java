@@ -9,24 +9,35 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class PageController {
 
-	@RequestMapping(value = {"/", "/index", "/home"})
+	@RequestMapping(value = { "/", "/index", "/home" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting","Hello Uday. Welcome to your world");
+		mv.addObject("title", "Home");
+		mv.addObject("userClickHome", true);
 		return mv;
 	}
-	
-	@RequestMapping(value="/test")
-	public ModelAndView test(@RequestParam(value="greeting",required=false)String greeting) {
+
+	@RequestMapping(value = { "/contact" })
+	public ModelAndView contact() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting",greeting);
+		mv.addObject("title", "Contact");
+		mv.addObject("userClickContact", true);
 		return mv;
 	}
-	
-	@RequestMapping(value="/test2/{greeting}")
-	public ModelAndView test2(@PathVariable(value="greeting")String greeting) {
+
+	@RequestMapping(value = { "/about" })
+	public ModelAndView about() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting",greeting);
+		mv.addObject("title", "About");
+		mv.addObject("userClickAbout", true);
+		return mv;
+	}
+
+	@RequestMapping(value = { "/listProducts" })
+	public ModelAndView listProducts() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Products");
+		mv.addObject("userClickListProducts", true);
 		return mv;
 	}
 }
