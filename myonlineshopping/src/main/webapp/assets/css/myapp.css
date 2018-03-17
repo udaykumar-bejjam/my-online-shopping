@@ -24,12 +24,18 @@ body {
 }
 
 .content {
-	padding-bottom:50px;
+	padding-bottom: 50px;
 }
 
 .footer {
-	position:absolute;
-	bottom:5px;
-	height:35px;
-	width:100%;
+	position: absolute;
+	bottom: 5px;
+	height: 35px;
+	width: 100%;
+}
+
+.breadcrumb > li + li:before {
+    color: #ccc;
+    content: "/ ";
+    padding: 0 5px;
 }

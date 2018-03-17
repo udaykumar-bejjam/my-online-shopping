@@ -25,12 +25,14 @@
 	<script>
 		window.menu = '${title}';
 	</script>
+	
+
     <!-- Bootstrap core CSS -->
     <link href="${css}/bootstrap.min.css" rel="stylesheet">
     
-        <!-- Bootstrap Pulse Theme CSS -->
-    <link href="${css}/pulsetheme.css" rel="stylesheet">
-
+	        <!-- Bootstrap Pulse Theme CSS -->
+ 	<link href="${css}/pulsetheme.css" rel="stylesheet">
+ 	
     <!-- Custom styles for this template -->
     <link href="${css}/myapp.css" rel="stylesheet">
 
@@ -53,9 +55,9 @@
  	<c:if test="${userClickContact == true }">
  	<%@include file="contact.jsp" %>
  	</c:if>
-    <c:if test="${userClickListProducts == true }">
- 	<%@include file="products.jsp" %>
- 	</c:if> 	
+ 	<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
+ 	<%@include file="listproducts.jsp" %>
+ 	</c:if>  	
  	</div>
 
     <!-- Footer -->
